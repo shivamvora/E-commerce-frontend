@@ -4,6 +4,7 @@ import Banner from './Banner';
 import NavBar from './NavBar';
 import { getProducts } from '../../redux/actions/productActions';
 import { useDispatch, useSelector } from 'react-redux';
+import Slide from './Slide';
 
 const Component = styled(Box)`
     padding:10px;
@@ -21,6 +22,7 @@ const Home = () => {
             <NavBar />
             <Component>
                 <Banner />
+                <Slide products={products} />
             </Component>
         </>
     )

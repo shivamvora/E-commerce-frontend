@@ -40,6 +40,7 @@ const Banner = () => {
             infinite={true}
             autoPlay={true}
             autoPlaySpeed={5000}
+            keyBoardControl={true}
         >
             {bannerData.map(data => (
                 <Image src={data.url} alt="banner" key={data.id} />
