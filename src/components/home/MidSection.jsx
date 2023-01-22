@@ -8,12 +8,16 @@ const Wrapper = styled(Grid)`
     justify-content:space-between;
 `;
 
-const Image = styled('img')({
+const Image = styled('img')(({ theme }) => ({
     marginTop: 10,
     width: '100%',
     display: 'flex',
-    justifyContent: 'space-between'
-})
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('md')]: {
+        objectFit: 'cover',
+        height: 120,
+    }
+}))
 
 const MidSection = () => {
     const imageURL = [
