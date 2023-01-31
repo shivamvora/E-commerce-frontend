@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { Link } from 'react-router-dom';
 import { Box, styled, Typography, Button, Divider } from '@mui/material';
 import Countdown from 'react-countdown';
 
@@ -96,12 +97,14 @@ const Slide = ({ products, title, timer }) => {
             >
                 {
                     products.map(product => (
-                        <Box textAlign="center" style={{ padding: '25px 15px' }}>
-                            <Image src={product.url} alt='products' />
-                            <Text style={{ fontWeight: 600, color: '#212121' }}>{product.title.shortTitle}</Text>
-                            <Text style={{ color: 'green' }}>{product.discount}</Text>
-                            <Text style={{ color: '#212121', opacity: '0.6' }}>{product.tagline}</Text>
-                        </Box>
+                        <Link to={`product/${product.id}`} style={{ textDecoration: 'none' }}>
+                            <Box textAlign="center" style={{ padding: '25px 15px' }}>
+                                <Image src={product.url} alt='products' />
+                                <Text style={{ fontWeight: 600, color: '#212121' }}>{product.title.shortTitle}</Text>
+                                <Text style={{ color: 'green' }}>{product.discount}</Text>
+                                <Text style={{ color: '#212121', opacity: '0.6' }}>{product.tagline}</Text>
+                            </Box>
+                        </Link>
                     ))
                 }
             </Carousel>
